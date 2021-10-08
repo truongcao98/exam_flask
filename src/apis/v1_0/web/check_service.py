@@ -30,8 +30,23 @@ def remove_nhanvien():
     NhanvienController().remove_nhanvien()
     return 'successfull'
 
+
 @checking_service_mod.route(URI.UPDATE_NHANVIEN, methods=[HTTP.METHOD.POST])
 def update_nhanvien():
     # print(data)
     NhanvienController().update_nhanvien()
     return 'successfull'
+
+@checking_service_mod.route(URI.SELECT_ALL, methods=[HTTP.METHOD.GET])
+def select_all_nhanvien():
+    # print(data)
+    NhanvienController().select_all_nhanvien()
+    return 'successfull'
+
+
+@checking_service_mod.route(URI.UPDATE_NHANVIEN, methods=[HTTP.METHOD.GET])
+def find_one_nhanvien():
+    # print(data)
+    NhanvienController().find_one_nhanvien()
+    return 'successfull'
+

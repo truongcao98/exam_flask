@@ -19,6 +19,13 @@ class NhanvienController():
         data = request.get_json()
         NVCollection().update(data['filter_option'], data['update_option'])
 
+    def select_all_nhanvien(self):
+        a = NVCollection.select_all({}, projection=None)
+        print(a)
+
+    def find_one_nhanvien(self):
+        a = NVCollection.find_one({})
+        print(a)
 
 
 
