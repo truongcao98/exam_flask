@@ -19,5 +19,5 @@ class Consumer:
             CVCollection().insert(a)
 
 
-# if __name__ == "__main__":
-#     Consumer.read_data_from_kafka()
+if __name__ == "__main__":
+    Consumer.read_data_from_kafka()
