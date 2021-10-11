@@ -4,6 +4,8 @@
     Company: MobioVN
     Date created: 29/06/2018
 """
+import json
+
 from flask import Blueprint
 
 from src.apis import HTTP
@@ -37,16 +39,16 @@ def update_nhanvien():
     NhanvienController().update_nhanvien()
     return 'successfull'
 
-@checking_service_mod.route(URI.SELECT_ALL, methods=[HTTP.METHOD.GET])
+@checking_service_mod.route(URI.SELECT_ALL_NHANVIEN, methods=[HTTP.METHOD.GET])
 def select_all_nhanvien():
     # print(data)
-    NhanvienController().select_all_nhanvien()
-    return 'successfull'
+    result = NhanvienController().select_all_nhanvien()
+    return json.dumps(result)
 
 
-@checking_service_mod.route(URI.UPDATE_NHANVIEN, methods=[HTTP.METHOD.GET])
+@checking_service_mod.route(URI.FIND_ONE_NHANVIEN, methods=[HTTP.METHOD.GET])
 def find_one_nhanvien():
     # print(data)
-    NhanvienController().find_one_nhanvien()
-    return 'successfull'
+    result = NhanvienController().find_one_nhanvien()
+    return json.dumps(result)
 
