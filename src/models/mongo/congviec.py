@@ -1,7 +1,7 @@
 from src.models.mongo.base_model import BaseModel
 
 
-class DealCollection(BaseModel):
+class CVCollection(BaseModel):
     """
         Danh sách công việc
     """
