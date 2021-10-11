@@ -1,5 +1,6 @@
 from src.models.mongo.congviec import CVCollection
 from flask import request
+from src.producer import Producer
 import pymongo
 from bson.json_util import dumps
 from bson.json_util import loads
@@ -9,6 +10,11 @@ class CongviecController:
     def add_congviec(self):
         data = request.get_json()
         CVCollection().insert(data)
+
+    def add_many_congviec(self):
+        data = request.get_json()
+        print(data)
+        Producer.push_data_to_kafka(data)
 
     def remove_congviec(self):
         print(request.get_json())

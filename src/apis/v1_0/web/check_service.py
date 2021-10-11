@@ -87,3 +87,8 @@ def find_one_congviec():
     result = CongviecController().find_one_congviec()
     return json.dumps(result)
 
+@checking_service_mod.route(URI.ADD_MANY, methods=[HTTP.METHOD.POST])
+def add_many_congviec():
+    CongviecController().add_many_congviec()
+    return 'successfull'
+

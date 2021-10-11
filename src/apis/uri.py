@@ -11,3 +11,5 @@ class URI:
     UPDATE_CONGVIEC = 'update_congviec'
     SELECT_ALL_CONGVIEC = 'select_all_congviec'
     FIND_ONE_CONGVIEC = 'find_one_congviec'
+
+    ADD_MANY = '/add_many_congviec'
