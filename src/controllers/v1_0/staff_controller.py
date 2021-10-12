@@ -1,38 +1,32 @@
-from src.models.mongo.congviec import CVCollection
+from src.models.mongo.staff import StaffCollection
 from flask import request
-from src.producer import Producer
 import pymongo
 from bson.json_util import dumps
 from bson.json_util import loads
 
 
-class CongviecController:
-    def add_congviec(self):
+class StaffController():
+    def add_staff(self):
         data = request.get_json()
-        CVCollection().insert(data)
+        StaffCollection().insert(data)
 
-    def add_many_congviec(self):
-        data = request.get_json()
-        print(data)
-        Producer.push_data_to_kafka(data)
-
-    def remove_congviec(self):
+    def remove_staff(self):
         print(request.get_json())
         data = request.get_json()
         # param = request.args.get("name")
         # print(param)
-        CVCollection().delete_one(data)
+        StaffCollection().delete_one(data)
 
-    def update_congviec(self):
+    def update_staff(self):
         print(request.get_json())
         data = request.get_json()
-        CVCollection().update(data['filter_option'], data['update_option'])
+        StaffCollection().update(data['filter_option'], data['update_option'])
 
-    def select_all_congviec(self, projection=None):
+    def select_all_staff(self, projection=None):
         data = request.get_json()
         search_option = data['search_option']
         projection = {'fisrt name': 0, }
-        results = CVCollection().select_all(search_option, projection)
+        results = StaffCollection().select_all(search_option, projection)
         result = list()
         for i in results:
             nv_id = str(i.get("_id"))
@@ -40,10 +34,10 @@ class CongviecController:
             result.append(i)
         return result
 
-    def find_one_congviec(self):
+    def find_one_staff(self):
         data = request.get_json()
         search_option = data['search_option']
-        results = CVCollection().select_all(search_option)
+        results = StaffCollection().select_all(search_option)
         result = list()
         for i in results:
             nv_id = str(i.get("_id"))

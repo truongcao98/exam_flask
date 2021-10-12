@@ -1,7 +1,7 @@
 import json
 
 from kafka import KafkaConsumer
-from src.models.mongo.congviec import CVCollection
+from src.models.mongo.task import TaskCollection
 
 
 class Consumer:
@@ -16,7 +16,7 @@ class Consumer:
         for msg in consumer:
             print(msg.value)
             a = json.loads(msg.value)
-            CVCollection().insert(a)
+            TaskCollection().insert(a)
 
 
 if __name__ == "__main__":

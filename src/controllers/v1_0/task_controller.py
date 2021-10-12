@@ -1,32 +1,43 @@
-from src.models.mongo.nhanvien import NVCollection
+from src.models.mongo.task import TaskCollection
 from flask import request
+from src.producer import Producer
 import pymongo
 from bson.json_util import dumps
 from bson.json_util import loads
 
 
-class NhanvienController():
-    def add_nhanvien(self):
+class TaskController:
+    @staticmethod
+    def add_task():
         data = request.get_json()
-        NVCollection().insert(data)
+        TaskCollection().insert(data)
 
-    def remove_nhanvien(self):
+    @staticmethod
+    def add_many_task():
+        data = request.get_json()
+        print(data)
+        Producer.push_data_to_kafka(data)
+
+    @staticmethod
+    def remove_task(self):
         print(request.get_json())
         data = request.get_json()
         # param = request.args.get("name")
         # print(param)
-        NVCollection().delete_one(data)
+        TaskCollection().delete_one(data)
 
-    def update_nhanvien(self):
+    @staticmethod
+    def update_task(self):
         print(request.get_json())
         data = request.get_json()
-        NVCollection().update(data['filter_option'], data['update_option'])
+        TaskCollection().update(data['filter_option'], data['update_option'])
 
-    def select_all_nhanvien(self, projection=None):
+    @staticmethod
+    def select_all_task(self, projection=None):
         data = request.get_json()
         search_option = data['search_option']
         projection = {'fisrt name': 0, }
-        results = NVCollection().select_all(search_option, projection)
+        results = TaskCollection().select_all(search_option, projection)
         result = list()
         for i in results:
             nv_id = str(i.get("_id"))
@@ -34,10 +45,11 @@ class NhanvienController():
             result.append(i)
         return result
 
-    def find_one_nhanvien(self):
+    @staticmethod
+    def find_one_task(self):
         data = request.get_json()
         search_option = data['search_option']
-        results = NVCollection().select_all(search_option)
+        results = TaskCollection().select_all(search_option)
         result = list()
         for i in results:
             nv_id = str(i.get("_id"))

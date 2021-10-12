@@ -1,7 +1,7 @@
 from src.models.mongo.base_model import BaseModel
 
 
-class CVCollection(BaseModel):
+class TaskCollection(BaseModel):
     """
         Danh sách công việc
     """

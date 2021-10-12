@@ -1,7 +1,7 @@
 from src.models.mongo.base_model import BaseModel
 
 
-class NVCollection(BaseModel):
+class StaffCollection(BaseModel):
     """
         Danh sách nhân viên
     """
