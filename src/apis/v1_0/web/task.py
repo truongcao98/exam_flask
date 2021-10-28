@@ -17,28 +17,24 @@ def add_task():
 
 @task_service_mod.route(URI.REMOVE_TASK, methods=[HTTP.METHOD.DELETE])
 def remove_task():
-    # print(data)
     TaskController().remove_task()
     return 'success'
 
 
 @task_service_mod.route(URI.UPDATE_TASK, methods=[HTTP.METHOD.PUT])
 def update_task():
-    # print(data)
     TaskController().update_task()
     return 'success'
 
 
 @task_service_mod.route(URI.SELECT_ALL_TASK, methods=[HTTP.METHOD.GET])
 def select_all_task():
-    # print(data)
     result = TaskController().select_all_task()
     return json.dumps(result)
 
 
 @task_service_mod.route(URI.FIND_ONE_TASK, methods=[HTTP.METHOD.GET])
 def find_one_task():
-    # print(data)
     result = TaskController().find_one_task()
     return json.dumps(result)
 

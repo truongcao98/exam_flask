@@ -16,7 +16,7 @@ checking_service_mod = Blueprint("check_service", __name__)
 
 @checking_service_mod.route(URI.PING, methods=[HTTP.METHOD.GET])
 def check_service_online():
-    return 'request successful cao lai truong!!! v1.0'
+    return 'request successful!!! v1.0'
 
 
 
