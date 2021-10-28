@@ -1,8 +1,6 @@
-from src.models.mongo.staff import StaffCollection
 from flask import request
-import pymongo
-from bson.json_util import dumps
-from bson.json_util import loads
+
+from src.models.mongo.staff import StaffCollection
 
 
 class StaffController():

@@ -1,9 +1,7 @@
-from src.models.mongo.task import TaskCollection
 from flask import request
+
+from src.models.mongo.task import TaskCollection
 from src.producer import Producer
-import pymongo
-from bson.json_util import dumps
-from bson.json_util import loads
 
 
 class TaskController:

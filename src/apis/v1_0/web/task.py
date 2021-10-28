@@ -15,14 +15,14 @@ def add_task():
     return 'success'
 
 
-@task_service_mod.route(URI.REMOVE_TASK, methods=[HTTP.METHOD.POST])
+@task_service_mod.route(URI.REMOVE_TASK, methods=[HTTP.METHOD.DELETE])
 def remove_task():
     # print(data)
     TaskController().remove_task()
     return 'success'
 
 
-@task_service_mod.route(URI.UPDATE_TASK, methods=[HTTP.METHOD.POST])
+@task_service_mod.route(URI.UPDATE_TASK, methods=[HTTP.METHOD.PUT])
 def update_task():
     # print(data)
     TaskController().update_task()

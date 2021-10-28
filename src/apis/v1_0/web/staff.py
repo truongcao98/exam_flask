@@ -13,14 +13,14 @@ def add_staff():
     return 'success'
 
 
-@staff_service_mod.route(URI.REMOVE_STAFF, methods=[HTTP.METHOD.POST])
+@staff_service_mod.route(URI.REMOVE_STAFF, methods=[HTTP.METHOD.DELETE])
 def remove_staff():
     # print(data)
     StaffController().remove_staff()
     return 'success'
 
 
-@staff_service_mod.route(URI.UPDATE_STAFF, methods=[HTTP.METHOD.POST])
+@staff_service_mod.route(URI.UPDATE_STAFF, methods=[HTTP.METHOD.PUT])
 def update_staff():
     # print(data)
     StaffController().update_staff()
