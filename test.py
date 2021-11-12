@@ -1,28 +1,33 @@
-class India():
-    def capital(self):
-        print("New Delhi is the capital of India.")
+class Rectangle:
+    def __init__(self, length, width):
+        self.length = length
+        self.width = width
 
-    def language(self):
-        print("Hindi is the most widely spoken language of India.")
+    def area(self):
+        return self.length * self.width
 
-    def type(self):
-        print("India is a developing country.")
+    def perimeter(self):
+        return 2 * self.length + 2 * self.width
 
 
-class USA():
-    def capital(self):
-        print("Washington, D.C. is the capital of USA.")
+# Here we declare that the Square class inherits from the Rectangle class
+class Square(Rectangle):
+    def __init__(self, length):
+        super().__init__(length, length)
 
-    def language(self):
-        print("English is the primary language of USA.")
 
-    def type(self):
-        print("USA is a developed country.")
+class Cube(Square):
+    def surface_area(self):
+        face_area = super().area()
+        return face_area
+
+    def volume(self):
+        face_area = super().area()
+        return face_area * self.length
+
 
 if __name__ == "__main__":
-    obj_ind = India()
-    obj_usa = USA()
-    for country in (obj_ind, obj_usa):
-        country.capital()
-        # country.language()
-        # country.type()
+    cube = Cube(3)
+    print(cube.length)
+    print(cube.width)
+    print(cube.surface_area())
