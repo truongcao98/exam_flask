@@ -4,7 +4,7 @@ admin_client = KafkaAdminClient(
     bootstrap_servers="localhost:9092",
     client_id="test"
 )
-list_name_topic = ['main_test', "test_1"]
+list_name_topic = ['voucher-internal-grant-code-profile']
 list_topic = list()
 for name in list_name_topic:
     list_topic.append(NewTopic(name=name, num_partitions=4, replication_factor=1))

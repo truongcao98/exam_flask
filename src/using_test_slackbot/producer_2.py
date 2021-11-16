@@ -11,7 +11,7 @@ class Producer:
         producer = KafkaProducer(bootstrap_servers=bootstrap_servers,
                                  value_serializer=lambda value: bytes(value, encoding='utf-8'))
 
-        topic = 'main_test'
+        topic = 'voucher-internal-grant-code-profile'
         for x in range(1000):
             data = {
                 "staff": str(x*3),
