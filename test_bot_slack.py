@@ -1,14 +1,18 @@
-SLACK_TOKEN = "xoxb-2710008378421-2710021655653-UrCdebDFNxEXtnghpybmW90c"
+SLACK_TOKEN = "xoxb-2744748955617-2737087864932-uD9bCWiZ3xKjCf7KG7VriQkd"
 import slack
+
 client = slack.WebClient(token=SLACK_TOKEN)
 
-client.chat_postMessage(channel='#l',
+# channel = "group-consumer-voucher-grant-code-internal"
+channel = "random"
+
+client.chat_postMessage(channel=channel,
                         blocks=[
                             {
                                 "type": "section",
                                 "text": {
                                     "type": "mrkdwn",
-                                    "text": "_///////////_" + '\n' + "current_time" + '\n' + "* ___Topic hiện tại có :* " + ' tin nhắn lag__: '
+                                    "text": "*truongcl:*"
                                 }
                             }
                         ]

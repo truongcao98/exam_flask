@@ -9,7 +9,8 @@ class Producer:
     def push_data_to_kafka_1():
         bootstrap_servers = ['localhost:9092']
         producer = KafkaProducer(bootstrap_servers=bootstrap_servers,
-                                 value_serializer=lambda value: bytes(value, encoding='utf-8'))
+                                 value_serializer=lambda value: bytes(value, encoding='utf-8'),
+                                 client_id='truongcl')
 
         topic = 'voucher-internal-grant-code-profile'
         for x in range(1000):
@@ -17,7 +18,8 @@ class Producer:
                 "staff": str(x * 2),
             }
             producer.send(topic, value=json.dumps(data), partition=0)
-            time.sleep(0.2)
+            print(x)
+            # time.sleep(0.2)
 
 
 if __name__ == "__main__":

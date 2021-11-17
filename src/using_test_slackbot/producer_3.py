@@ -17,6 +17,7 @@ class Producer:
                 "staff": str(x * 5),
             }
             producer.send(topic, value=json.dumps(data), partition=2)
+            print(x)
             time.sleep(0.5)
 
 
