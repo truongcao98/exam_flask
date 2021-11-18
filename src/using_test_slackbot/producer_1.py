@@ -12,7 +12,7 @@ class Producer:
                                  value_serializer=lambda value: bytes(value, encoding='utf-8'),
                                  client_id='truongcl')
 
-        topic = 'voucher-internal-grant-code-profile'
+        topic = 'ads-analyzing-stt'
         for x in range(1000):
             data = {
                 "staff": str(x * 2),
