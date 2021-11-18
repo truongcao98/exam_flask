@@ -1,6 +1,6 @@
 import json
 
-SLACK_TOKEN = "xoxb-2744748955617-2737087864932-qBzGcOnr1eAsQtdzj10ZKJch"
+SLACK_TOKEN = "xoxb-2744748955617-2737087864932-VxyiyNDwgdQBW7YIk8khAnp4"
 import slack
 
 client = slack.WebClient(token=SLACK_TOKEN)
@@ -9,33 +9,25 @@ client = slack.WebClient(token=SLACK_TOKEN)
 channel = "random"
 
 intro_msg = json.dumps([{
-    "fallback": "Plain-text summary of the attachment.",
+    "fallback": "Warning! Have topic lag",
     # "color": "#fc0511",
     "color": "#fab905",
-    "pretext": "Optional text that appears above the attachment block",
-    "author_name": "Bobby Tables",
-    "text": "Optional text that appears within the attachment",
+    "pretext": "Description info topic lag",
     "fields": [
+        # {
+        #     "value": "* _______ **17:59 18/11/2021** _______ *",
+        # },
         {
-            "title": "Priority",
-            "value": "High",
-            "short": False
+            "value": "*Topic*: voucher-internal-grant-code-profile   *Partition*: `0`   *Lag*: `2984`",
+        },
+        {
+            "value": "Số lượng lag giảm: 0",
         }
     ],
-    "footer": "Slack API",
-    "footer_icon": "https://platform.slack-edge.com/img/default_application_icon.png",
-    "ts": 123456789
-}])
+    "footer": "Will be smart",
+    "footer_icon": "https://media-exp1.licdn.com/dms/image/C510BAQHkgTAhiRQjRw/company-logo_200_200/0/1565949926495?e=2159024400&v=beta&t=704xlUQlIZ9Nr3QmBjXOEXKhCUQr0gcnGdmD9LUjILA",
 
+}])
 client.chat_postMessage(channel="group-consumer-voucher-grant-code-internal",
-                        blocks=[
-                            {
-                                "type": "section",
-                                "text": {
-                                    "type": "mrkdwn",
-                                    "text": "*truongcl:*"
-                                }
-                            }
-                        ],
                         attachments=intro_msg
                         )
