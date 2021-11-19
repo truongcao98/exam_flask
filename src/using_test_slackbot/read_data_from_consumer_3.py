@@ -18,6 +18,7 @@ class Consumer:
         consumer.assign([TopicPartition(topic, 2)])
         for msg in consumer:
             print(msg.value)
+            consumer.commit()
             time.sleep(5)
 
 
