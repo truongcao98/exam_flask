@@ -1,6 +1,6 @@
 import json
 
-SLACK_TOKEN = "xoxb-2744748955617-2737087864932-ek8fjA12E1oJS3qyxBSVN9Gs"
+SLACK_TOKEN = "xoxb-2744748955617-2737087864932-AewPYSfSeDhwRmzNpurBHMOE"
 import slack
 
 client = slack.WebClient(token=SLACK_TOKEN)
