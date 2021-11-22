@@ -18,7 +18,7 @@ class Producer:
             }
             producer.send(topic, value=json.dumps(data), partition=2)
             print(x)
-            time.sleep(0.5)
+            # time.sleep(0.5)
 
 
 if __name__ == "__main__":

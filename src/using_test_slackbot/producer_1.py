@@ -17,9 +17,9 @@ class Producer:
             data = {
                 "staff": str(x * 2),
             }
-            producer.send(topic, value=json.dumps(data), partition=0)
+            producer.send(topic, value=json.dumps(data))
             print(x)
-            time.sleep(0.1)
+            # time.sleep(0.1)
 
 
 if __name__ == "__main__":

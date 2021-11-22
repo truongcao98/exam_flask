@@ -21,13 +21,13 @@ class Consumer:
             auto_offset_reset='latest',
             client_id="truongcl"
         )
-        # consumer.subscribe([self.topic_name])
-        consumer.assign([TopicPartition(topic, 0)])
+        consumer.subscribe([self.topic_name])
+        # consumer.assign([TopicPartition(topic, 0)])
 
         for msg in consumer:
             print(msg.value)
             consumer.commit()
-            # time.sleep(1)
+            time.sleep(0.5)
 
 
 if __name__ == "__main__":
