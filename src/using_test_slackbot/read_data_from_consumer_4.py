@@ -11,7 +11,7 @@ class Consumer:
 
     def read_data_from_kafka_4(self):
         bootstrap_servers = ['localhost:9092']
-        topic = 'process-profile-change-history-11'
+        topic = 'process-profile-change-history'
         consumer = KafkaConsumer(
             bootstrap_servers=bootstrap_servers,
             group_id=Common.group_consumer,

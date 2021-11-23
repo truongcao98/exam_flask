@@ -7,7 +7,7 @@ from src.common import Common
 
 class Consumer:
     def __init__(self):
-        self.topic_name = 'e1119-broadcast-merge-1'
+        self.topic_name = 'e1119-broadcast-merge'
 
     def read_data_from_kafka_2(self):
         bootstrap_servers = ['localhost:9092']
