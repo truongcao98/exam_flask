@@ -7,7 +7,7 @@ from src.common import Common
 
 class Consumer:
     def __init__(self):
-        self.topic_name = 'ads-analyzing-stt'
+        self.topic_name = 'process-profile-change-history'
 
     def read_data_from_kafka_4(self):
         bootstrap_servers = ['localhost:9092']
