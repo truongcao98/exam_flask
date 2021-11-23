@@ -7,7 +7,7 @@ from src.common import Common
 
 class Consumer:
     def __init__(self):
-        self.topic_name = 'ads-analyzing-stt'
+        self.topic_name = 'e1119-broadcast-merge-1'
 
     def read_data_from_kafka_2(self):
         bootstrap_servers = ['localhost:9092']
@@ -18,7 +18,7 @@ class Consumer:
             client_id="truongcl2"
         )
         # consumer.assign([TopicPartition(topic, 1)])
-        consumer.subscribe([topic])
+        consumer.subscribe([self.topic_name])
 
         for msg in consumer:
             print(msg.value)
@@ -27,4 +27,4 @@ class Consumer:
 
 
 if __name__ == "__main__":
-    Consumer.read_data_from_kafka_2(2)
+    Consumer().read_data_from_kafka_2()

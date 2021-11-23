@@ -11,14 +11,14 @@ class Consumer:
 
     def read_data_from_kafka_4(self):
         bootstrap_servers = ['localhost:9092']
-        topic = 'ads-analyzing-stt'
+        topic = 'process-profile-change-history-11'
         consumer = KafkaConsumer(
             bootstrap_servers=bootstrap_servers,
             group_id=Common.group_consumer,
             client_id='truongcl4'
         )
-        consumer.assign([TopicPartition(topic, 3)])
-        # consumer.subscribe([topic])
+        # consumer.assign([TopicPartition(topic, 3)])
+        consumer.subscribe([self.topic_name])
         for msg in consumer:
             print(msg.value)
             # consumer.commit()
@@ -26,4 +26,4 @@ class Consumer:
 
 
 if __name__ == "__main__":
-    Consumer.read_data_from_kafka_4(3)
+    Consumer().read_data_from_kafka_4()

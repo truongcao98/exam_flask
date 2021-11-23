@@ -11,7 +11,7 @@ class Producer:
         producer = KafkaProducer(bootstrap_servers=bootstrap_servers,
                                  value_serializer=lambda value: bytes(value, encoding='utf-8'))
 
-        topic = 'ads-analyzing-stt'
+        topic = 'e1119-broadcast-merge'
         for x in range(1000):
             data = {
                 "staff": str(x*3),

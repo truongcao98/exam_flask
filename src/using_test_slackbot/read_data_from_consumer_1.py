@@ -19,7 +19,7 @@ class Consumer:
             # enable_auto_commit=True,
             # auto_commit_interval_ms=1,
             auto_offset_reset='latest',
-            client_id="truongcl"
+            client_id="truongcl4"
         )
         consumer.subscribe([self.topic_name])
         # consumer.assign([TopicPartition(topic, 0)])
