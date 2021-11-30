@@ -10,7 +10,6 @@ class Consumer:
         self.topic_name = 'e1119-broadcast-merge'
         self.topic_name2 = 'ads-analyzing-stt'
 
-
     def read_data_from_kafka_2(self):
         bootstrap_servers = ['localhost:9092']
         topic = 'ads-analyzing-stt'
