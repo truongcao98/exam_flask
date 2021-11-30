@@ -8,6 +8,8 @@ from src.common import Common
 class Consumer:
     def __init__(self):
         self.topic_name = 'e1119-broadcast-merge'
+        self.topic_name2 = 'ads-analyzing-stt'
+
 
     def read_data_from_kafka_2(self):
         bootstrap_servers = ['localhost:9092']
@@ -23,7 +25,7 @@ class Consumer:
         for msg in consumer:
             print(msg.value)
             consumer.commit()
-            time.sleep(2)
+            time.sleep(1)
 
 
 if __name__ == "__main__":
