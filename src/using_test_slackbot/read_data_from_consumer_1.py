@@ -22,8 +22,8 @@ class Consumer:
 
         for msg in consumer:
             print(msg.value)
+            time.sleep(0.2)
             consumer.commit()
-            time.sleep(0.5)
 
 
 if __name__ == "__main__":
