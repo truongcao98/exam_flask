@@ -13,7 +13,7 @@ class Consumer:
         bootstrap_servers = ['localhost:9092']
         consumer = KafkaConsumer(
             bootstrap_servers=bootstrap_servers,
-            group_id=Common.group_consumer,
+            group_id='dnc-common-event',
             client_id='truongcl4'
         )
         consumer.subscribe([self.topic_name])
