@@ -3,11 +3,13 @@ import time
 
 from kafka import KafkaProducer
 
+from src.common import ServerName
+
 
 class Producer:
     @staticmethod
     def push_data_to_kafka_3():
-        bootstrap_servers = ['localhost:9092']
+        bootstrap_servers = [ServerName.SERVER]
         producer = KafkaProducer(bootstrap_servers=bootstrap_servers,
                                  value_serializer=lambda value: bytes(value, encoding='utf-8'))
 

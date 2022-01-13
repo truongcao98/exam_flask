@@ -2,7 +2,7 @@ import time
 
 from kafka import KafkaConsumer, TopicPartition
 
-from src.common import Common
+from src.common import Common, ServerName
 
 
 class Consumer:
@@ -11,7 +11,7 @@ class Consumer:
         self.topic_name2 = 'ads-analyzing-stt'
 
     def read_data_from_kafka_2(self):
-        bootstrap_servers = ['localhost:9092']
+        bootstrap_servers = [ServerName.SERVER]
         consumer = KafkaConsumer(
             bootstrap_servers=bootstrap_servers,
             group_id=Common.group_consumer,

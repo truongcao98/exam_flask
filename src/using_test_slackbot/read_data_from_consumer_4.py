@@ -2,7 +2,7 @@ import time
 
 from kafka import KafkaConsumer, TopicPartition
 
-from src.common import Common
+from src.common import Common, ServerName
 
 
 class Consumer:
@@ -10,7 +10,7 @@ class Consumer:
         self.topic_name = 'dnc-e0-retry-kafka'
 
     def read_data_from_kafka_4(self):
-        bootstrap_servers = ['localhost:9092']
+        bootstrap_servers = [ServerName.SERVER]
         consumer = KafkaConsumer(
             bootstrap_servers=bootstrap_servers,
             group_id='dnc-common-event',
