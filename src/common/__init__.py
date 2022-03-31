@@ -3,4 +3,4 @@ class Common:
 
 
 class ServerName:
-    SERVER = '172.16.1.28:29092'
+    SERVER = '172.16.1.224:29092'
