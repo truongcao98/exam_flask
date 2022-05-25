@@ -7,7 +7,7 @@ from src.common import Common, ServerName
 
 class Consumer:
     def __init__(self):
-        self.topic_name = 'ads-analyzing-stt'
+        self.topic_name = 'test'
 
     # @staticmethod
     def read_data_from_kafka_1(self):
@@ -22,7 +22,7 @@ class Consumer:
 
         for msg in consumer:
             print(msg.value)
-            time.sleep(0.2)
+            # time.sleep(0.2)
             consumer.commit()
 
 
