@@ -7,21 +7,19 @@ from src.common import Common
 
 class Consumer:
     def __init__(self):
-        self.topic_name = 'process-profile-change-history'
+        self.topic_name = 'dnc-e0-retry-kafka'
 
     def read_data_from_kafka_4(self):
         bootstrap_servers = ['localhost:9092']
-        topic = 'process-profile-change-history'
         consumer = KafkaConsumer(
             bootstrap_servers=bootstrap_servers,
-            group_id=Common.group_consumer,
+            group_id='dnc-common-event',
             client_id='truongcl4'
         )
-        # consumer.assign([TopicPartition(topic, 3)])
         consumer.subscribe([self.topic_name])
         for msg in consumer:
             print(msg.value)
-            # consumer.commit()
+            consumer.commit()
             time.sleep(5)
 
 

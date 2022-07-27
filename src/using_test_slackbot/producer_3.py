@@ -16,7 +16,7 @@ class Producer:
             data = {
                 "staff": str(x * 5),
             }
-            producer.send(topic, value=json.dumps(data), partition=2)
+            producer.send(topic, value=json.dumps(data))
             print(x)
             # time.sleep(0.5)
 
