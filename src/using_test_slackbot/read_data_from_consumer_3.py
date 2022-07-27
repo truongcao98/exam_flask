@@ -8,7 +8,7 @@ from src.common import Common, ServerName
 class Consumer:
     def __init__(self):
         self.topic_name = 'merge-profile'
-        self.topic_name2 = 'ads-analyzing-stt'
+        # self.topic_name2 = 'ads-analyzing-stt'
 
     def read_data_from_kafka_3(self):
         bootstrap_servers = [ServerName.SERVER]

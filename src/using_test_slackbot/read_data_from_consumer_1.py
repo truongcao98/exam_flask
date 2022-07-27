@@ -7,7 +7,7 @@ from src.common import Common, ServerName
 
 class Consumer:
     def __init__(self):
-        self.topic_name = 'test'
+        self.topic_name = 'ads-analyzing-stt'
 
     # @staticmethod
     def read_data_from_kafka_1(self):
