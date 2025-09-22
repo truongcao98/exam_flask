@@ -1,5 +1,6 @@
 class URI:
     PING = '/ping'
+    VIETNAMESE_CHECK = '/vietnamese'  # New endpoint for Vietnamese language support
     ADD_STAFF = '/staff'
     REMOVE_STAFF = '/staff'
     UPDATE_STAFF = '/staff'
