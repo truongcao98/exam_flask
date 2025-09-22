@@ -1,7 +1,7 @@
 from flask import request
 
 from src.models.mongo.task import TaskCollection
-from src.producer import Producer
+# from src.producer import Producer  # Temporarily commented out due to kafka dependency issue
 
 
 class TaskController:
@@ -14,7 +14,8 @@ class TaskController:
     def add_many_task():
         data = request.get_json()
         print(data)
-        Producer.push_data_to_kafka(data)
+        # Producer.push_data_to_kafka(data)  # Temporarily commented out
+        print("Task data received:", data)
 
     @staticmethod
     def remove_task(self):
